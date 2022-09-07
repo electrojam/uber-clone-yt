@@ -1,5 +1,6 @@
 import React from 'react'
-import { View, Text, SafeAreaView, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context';
 import tw from 'twrnc'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import { GOOGLE_MAPS_APIKEY } from "@env"
@@ -14,8 +15,8 @@ const NavigateCard = () => {
   const navigation = useNavigation()
 
   return (
-    <SafeAreaView style={tw`bg-white flex-1`}>
-      <Text style={tw`text-center py-5 text-xl`}>Good Morning, Electrojam</Text>
+    <SafeAreaView style={tw`bg-white flex-1 pt--6`}>
+      <Text style={tw`text-center py-3 text-xl`}>Good Morning, Electrojam</Text>
       <View style={tw`border-t border-gray-200 flex-shrink`}>
         <GooglePlacesAutocomplete 
           placeholder='Where to?'
@@ -68,7 +69,7 @@ export default NavigateCard;
 const toInputBoxStyles = StyleSheet.create({
   container: {
     backgroundColor: "white",
-    paddingTop: 20,
+    paddingTop: 15,
     flex: 0,
   },
   textInput: {
